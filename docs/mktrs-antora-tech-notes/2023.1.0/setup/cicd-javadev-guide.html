@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Docker/jenkins/SonarQube :: The Muskeeters Tech Notes</title>
     <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.0/setup/cicd-javadev-guide.html">
+    <link rel="prev" href="tools/insomnia.html">
+    <link rel="next" href="../tipsntricks/index.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
@@ -49,13 +51,34 @@
     <a class="nav-link" href="tools/git-github.html">Git/Github</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="tools/docker.html">Docker</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tools/docker-desktop.html">Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tools/rancher-desktop.html">Rancher Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tools/docker-cmds.html">Commands</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="tools/jdk.html">JDK</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="tools/tomcat.html">Tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="tools/intellij.html">IntelliJ</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="tools/intellij-smart-tomcat.html">Smart Tomcat</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="tools/jenkins.html">Jenkins</a>
@@ -176,7 +199,7 @@ software changes to add new features or bug fixes.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_create_spring_boot_app"><a class="anchor" href="#_create_spring_boot_app"></a>Create Spring Boot App</h2>
+<h2 id="createspringbootapp"><a class="anchor" href="#createspringbootapp"></a>Create Spring Boot App</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Here the process is simple as we assume you know how to create a basic
@@ -214,7 +237,7 @@ favorite IDE to edit files and continue with the tutorial.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configure_jenkins"><a class="anchor" href="#_configure_jenkins"></a>Configure Jenkins</h2>
+<h2 id="configurejenkins"><a class="anchor" href="#configurejenkins"></a>Configure Jenkins</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Here we are going to document only the necessary steps required for our setup to properly work.</p>
@@ -297,7 +320,7 @@ interface install it by hand. In this guide we will follow the <strong><em>Jenki
 </div>
 </div>
 <div class="sect1">
-<h2 id="_build_pipeline"><a class="anchor" href="#_build_pipeline"></a>Build Pipeline</h2>
+<h2 id="buildpipeline"><a class="anchor" href="#buildpipeline"></a>Build Pipeline</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In order to run the <strong><em>Jenkins</em></strong> pipeline for this guide, there are some other plugins to be installed.
@@ -366,7 +389,7 @@ It is necessary to restart in order to use these plugins, do it now.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configure_maven_in_jenkins"><a class="anchor" href="#_configure_maven_in_jenkins"></a>Configure Maven in Jenkins</h2>
+<h2 id="configuremaveninjenkins"><a class="anchor" href="#configuremaveninjenkins"></a>Configure Maven in Jenkins</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Open your <strong><em>Jenkins</em></strong> home page.</p>
@@ -425,7 +448,7 @@ Select the version that is more convenient according to your project.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configure_sonarqube_scanner"><a class="anchor" href="#_configure_sonarqube_scanner"></a>Configure SonarQube Scanner</h2>
+<h2 id="configuresonarqubescanner"><a class="anchor" href="#configuresonarqubescanner"></a>Configure SonarQube Scanner</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>After all required plugins are installed in the previous section, we need to install the SonarQube Scanner.</p>
@@ -487,7 +510,7 @@ Select the version that is more convenient according to your project.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configure_sonarqube"><a class="anchor" href="#_configure_sonarqube"></a>Configure SonarQube</h2>
+<h2 id="configuresonarqube"><a class="anchor" href="#configuresonarqube"></a>Configure SonarQube</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>-----ZZZZZ TODO</p>
@@ -495,7 +518,7 @@ Select the version that is more convenient according to your project.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_build_a_pipeline"><a class="anchor" href="#_build_a_pipeline"></a>Build a Pipeline</h2>
+<h2 id="buildapipeline"><a class="anchor" href="#buildapipeline"></a>Build a Pipeline</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A pipeline in Jenkins is the recipe of tasks it needs to execute, sequentially or in parallel. In this
@@ -672,6 +695,10 @@ Java App Tests. Here name task as <strong><em>test</em></strong> and in the simi
 </div>
 </div>
 </div>
+<nav class="pagination">
+  <span class="prev"><a href="tools/insomnia.html">Insomnia</a></span>
+  <span class="next"><a href="../tipsntricks/index.html">Tips and Tricks</a></span>
+</nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>

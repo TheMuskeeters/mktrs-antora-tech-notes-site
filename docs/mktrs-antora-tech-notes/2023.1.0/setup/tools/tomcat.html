@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Tomcat :: The Muskeeters Tech Notes</title>
     <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.0/setup/tools/tomcat.html">
+    <link rel="prev" href="jdk.html">
+    <link rel="next" href="intellij.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../../_/css/site.css">
   </head>
@@ -49,13 +51,34 @@
     <a class="nav-link" href="git-github.html">Git/Github</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="docker.html">Docker</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="docker-desktop.html">Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="rancher-desktop.html">Rancher Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="docker-cmds.html">Commands</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="jdk.html">JDK</a>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="tomcat.html">Tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="intellij.html">IntelliJ</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="intellij-smart-tomcat.html">Smart Tomcat</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="jenkins.html">Jenkins</a>
@@ -149,20 +172,205 @@
   <div class="content">
 <article class="doc">
 <h1 class="page">Tomcat</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Set the following line inside file <strong><em>startup.bat</em></strong> or <strong><em>startup.sh</em></strong> in the
-<strong><em>Tomcat</em></strong> installed folder.</p>
+<p>technologies. Tomcat provides a <strong>"pure Java"</strong> HTTP web server environment in
+which Java code can run.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">set CATALINA_OPTS="-agentlib:jdwp=transport=dt_socket,address=7999,server=y,suspend=n"</code></pre>
+<div class="paragraph">
+<p>Tomcat is developed and maintained by an open community of developers under the
+auspices of the Apache Software Foundation, released under the Apache
+License 2.0 license.</p>
+</div>
+<div class="paragraph">
+<p>For more information visit <a href="https://tomcat.apache.org/" target="_blank" rel="noopener">Tomcat Page</a>.</p>
 </div>
 </div>
-<div class="admonitionblock warning">
+</div>
+<div class="sect1">
+<h2 id="configuring"><a class="anchor" href="#configuring"></a>Configuring</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As there are many versions avaiable of <strong>Tomcat</strong>, we need to understand which
+one to use in our projects.</p>
+</div>
+<div class="paragraph">
+<p>For that matter, check the <a href="https://tomcat.apache.org/whichversion.html" target="_blank" rel="noopener">Apache Tomcat Versions</a>.</p>
+</div>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>As we are currently using <strong>Java 8</strong> and <strong>11</strong> versions we can use any version
+from 8.5.72 and above.</p>
+</div>
+<div class="paragraph">
+<p>Here, we use <strong>10.0.12</strong>. The instructions are the same for <strong>8.5.x</strong>, <strong>9.0.x</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Besides, the instructions are written using a <strong>Microsoft Windows</strong> Operating
+System, so you can expect folder names or other specific commands in this
+<em>Operating System</em>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The first step is to go to the <a href="https://tomcat.apache.org/download-10.cgi">Apache Tomcat Download Page</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/tomcat/001-tomcat-download.png" alt="Tomcat Download" width="700" height="700">
+</div>
+<div class="title">Figure 1. Tomcat Download</div>
+</div>
+<div class="paragraph">
+<p>When you click you will move the page forward to the following place.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/tomcat/002-tomcat-download-ver-sel.png" alt="Tomcat Download Version Selection" width="700" height="700">
+</div>
+<div class="title">Figure 2. Tomcat Download Version Selection</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can explore the other choices available, but here we use the indicated
+<strong>ZIP</strong> choice.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>As this is a <strong>ZIP</strong> file, use any tool to explode its contents.
+Take note of the location you exploded those contents as from now on, this is
+considered as the <strong>[TOMCAT_HOME]</strong>, for example, <strong>[TOMCAT_HOME]</strong> is set to
+<strong>'c:\java\apache-tomcat-10.0.12\'</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Set the following line inside file <strong><em>startup.bat</em></strong> or <strong><em>startup.sh</em></strong> in the
+<strong>[TOMCAT_HOME]\bin</strong> folder:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">set CATALINA_OPTS="-agentlib:jdwp=transport=dt_socket,address=7999,server=y,suspend=n"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can see a screenshot showing this.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/tomcat/003-tomcat-add-agent.png" alt="Tomcat Add Agent Port" width="700" height="700">
+</div>
+<div class="title">Figure 3. Tomcat Add Agent Port</div>
+</div>
+<div class="paragraph">
+<p>Using this configuration, you are telling <strong>Tomcat</strong> to expose port 7999 (change
+this number to one that is not used if you get a conflict) in order
+to connect to it remotely for debugging purposes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="runningtomcat"><a class="anchor" href="#runningtomcat"></a>Running Tomcat</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now you have the software installed and provided you have the proper <strong>[JAVA_HOME]</strong>
+setting configured, you can go to a terminal window (or use a <strong><em>BASH</em></strong> terminal
+in <strong>Windows</strong>) and type the following command.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Go to [TOMCAT_HOME]\bin folder.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ ./startup</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/tomcat/004-tomcat-startup-windows-terminal.png" alt="Tomcat Startup" width="700" height="700">
+</div>
+<div class="title">Figure 4. Tomcat Startup</div>
+</div>
+<div class="paragraph">
+<p>When executing this command it opens up a new window but this time it is for the
+Java process.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Here, <strong>Tomcat</strong> is using JRE_HOME for JDK 8, if you need to change this setting,
+you simply change the <strong>[JAVA_HOME]</strong> environment variable.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/tomcat/005-tomcat-java-process.png" alt="Tomcat Java Process" width="700" height="700">
+</div>
+<div class="title">Figure 5. Tomcat Java Process</div>
+</div>
+<div class="paragraph">
+<p>When you need to stop the server, execute the <strong>[TOMCAT_HOME]\bin\shutdown.bat</strong> (Windows) or
+<strong>[TOMCAT_HOME]/bin/shutdown.sh</strong> (Linux) script.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If this does not work, go to the <strong><em>Tomcat Java Process</em></strong> window and press
+CTRL+C (Windows) to cancel the process (check your key in other <em>Operating
+System</em>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Take special care of the following:</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -176,6 +384,184 @@ starting the <strong>Tomcat</strong> instance to the <strong><em>JDK</em></stron
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>To check that <strong>Tomcat</strong> server is working, open the followng URL in the browser:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>http://localhost:8080/</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you need to change the port to any other available number for your
+configuration or if for some reason it is now used. Open the following file
+[TOMCAT_HOME]\conf\server.xml and locate the following entry</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">    &lt;Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" /&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Change the <strong>port</strong> value to the one you need.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/tomcat/006-tomcat-page.png" alt="Tomcat Server Page" width="700" height="700">
+</div>
+<div class="title">Figure 6. Tomcat Server Page</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To access any of the <strong>Server Status</strong>, <strong>Manage App</strong>, <strong>Host Manager</strong> buttons,
+we need to configure the <strong>Tomcat</strong> Server for administrator users.</p>
+</div>
+<div class="paragraph">
+<p>To do so, go to <strong>[TOMCAT_HOME]\conf</strong> folder, locate the file <strong><em>tomcat-users.xml</em></strong>
+and add the following before closing the <strong><em>&lt;/tomcat-users&gt;</em></strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;role rolename="admin-gui"/&gt;
+&lt;role rolename="manager-gui"/&gt;
+&lt;role rolename="manager-script"/&gt;
+&lt;role rolename="manager-jmx"/&gt;
+&lt;role rolename="manager-status"/&gt;
+&lt;user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status,admin-gui"/&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Save the file and restart the server. Now when prompted for the user type
+<strong><em>admin/admin</em></strong>.</p>
+</div>
+<div class="paragraph">
+<p>Notice this is valid only for development environment and not for production
+environment.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/tomcat/007-tomcat-users-setting.png" alt="Tomcat Users Settings" width="700" height="700">
+</div>
+<div class="title">Figure 7. Tomcat Users Settings</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When you use any of the <strong>Server Status</strong>, <strong>Manage App</strong>, <strong>Host Manager</strong> options,
+you can see them in the following (remember to use an allowed user).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverstatus"><a class="anchor" href="#serverstatus"></a>Server Status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With this option you can evaluate the status of the server.
+To access this option you need to provide an allowed user (see previous section).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/tomcat/008-tomcat-server-status.png" alt="Tomcat Server Status" width="700" height="700">
+</div>
+<div class="title">Figure 8. Tomcat Server Status</div>
+</div>
+<div class="paragraph">
+<p>Explore the options that are presented there.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="manageapp"><a class="anchor" href="#manageapp"></a>Manage App</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here you can get a glimpse of all the applications deployed to the server.
+To access this option you need to provide an allowed user (see previous section).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/tomcat/009-tomcat-manage-app.png" alt="Tomcat Manage App" width="700" height="700">
+</div>
+<div class="title">Figure 9. Tomcat Manage App</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you place any <strong>WAR</strong> (this is the artifact that <strong>Tomcat</strong> server understands
+to properly configure as an application), and if you place this <strong>WAR</strong> into
+<strong>[TOMCAT_HOME]\webapps</strong> folder, the server will detect it and it deploys that
+artifat to the server.</p>
+</div>
+<div class="paragraph">
+<p>For example, if the <strong>WAR</strong> is name as <strong><em>my-app.war</em></strong> and you put into that folder,
+then the <strong>Tomcat</strong> server will deploy it and configure that application and
+configures its context such as 'http://localhost:8080/my-app'</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="virtualhostmanager"><a class="anchor" href="#virtualhostmanager"></a>Virtual Host Manager</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here you will see the configuration of the running <strong>Tomcat</strong> server, this option
+is only available to be viewed with a browser that is running in the same
+computer the server is running. To access this option you need to be connected
+with an authorized user.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/tomcat/010-tomcat-host-manage.png" alt="Tomcat Virtal Host Manager" width="700" height="700">
+</div>
+<div class="title">Figure 10. Tomcat Virtal Host Manager</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sampleapplication"><a class="anchor" href="#sampleapplication"></a>Sample Application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to exercise other topics so you get the full knowlege about how
+<strong>Tomcat</strong> server works, let&#8217;s creat a sample application to ilustrate this
+concepts.</p>
+</div>
+<div class="paragraph">
+<p>----&#8594; Spring Boot App Sample</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="jdk.html">JDK</a></span>
+  <span class="next"><a href="intellij.html">IntelliJ</a></span>
+</nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>

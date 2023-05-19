@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>JDK :: The Muskeeters Tech Notes</title>
     <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.0/setup/tools/jdk.html">
+    <link rel="prev" href="docker-cmds.html">
+    <link rel="next" href="tomcat.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../../_/css/site.css">
   </head>
@@ -49,13 +51,34 @@
     <a class="nav-link" href="git-github.html">Git/Github</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="docker.html">Docker</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="docker-desktop.html">Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="rancher-desktop.html">Rancher Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="docker-cmds.html">Commands</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="jdk.html">JDK</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="tomcat.html">Tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="intellij.html">IntelliJ</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="intellij-smart-tomcat.html">Smart Tomcat</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="jenkins.html">Jenkins</a>
@@ -150,11 +173,19 @@
 <article class="doc">
 <h1 class="page">JDK</h1>
 <div class="sect1">
-<h2 id="_certificates"><a class="anchor" href="#_certificates"></a>Certificates</h2>
+<h2 id="certificates"><a class="anchor" href="#certificates"></a>Certificates</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When you have installed and configured the <strong><em>JDK</em></strong>, you then need to install the
 SSL Certificate given the environment you need to interact with.</p>
+</div>
+<div class="paragraph">
+<p>The following instructions can be used only for setting the SSL Certicate for
+the lower environments, namely, <strong><em>LATEST</em></strong>, <strong><em>STAGE</em></strong>, <strong><em>LOAD</em></strong>.</p>
+</div>
+<div class="paragraph">
+<p>We use the <strong>LATEST</strong> in this document. You can follow this template to replicate
+for the other environments, replacing the environment where appropriate.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -172,14 +203,42 @@ SSL Certificate given the environment you need to interact with.</p>
 </div>
 <div class="paragraph">
 <p>Open your web browser, here we will be using <strong>Google Chrome Browser</strong> and point
-to any site that uses HTTPS to grab its certificate:</p>
+to any of the following URLs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>LATEST:</strong> <a href="https://dclapi-latest.wdw.disney.com/dcl-api/dcl-availability-service/voyages" class="bare">https://dclapi-latest.wdw.disney.com/dcl-api/dcl-availability-service/voyages</a></p>
+</li>
+<li>
+<p><strong>STAGE:</strong> <a href="https://dclapi-stage.wdw.disney.com/dcl-api/dcl-availability-service/voyages" class="bare">https://dclapi-stage.wdw.disney.com/dcl-api/dcl-availability-service/voyages</a></p>
+</li>
+<li>
+<p><strong>LOAD:</strong> <a href="https://dclapi-load.wdw.disney.com/dcl-api/dcl-availability-service/voyages" class="bare">https://dclapi-load.wdw.disney.com/dcl-api/dcl-availability-service/voyages</a></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>You are presented with the following page.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The site we are using here refers to <strong>'DCL API'</strong>, so, we are registering
+the certificates for calls to it.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/ssl-instructions/001-ssl-init-grab.png" alt="Google Chrome Grab SSL Certificate" width="700" height="700">
+<img src="../_images/ssl-instructions/001-ssl-init-grab.png" alt="Google Chrome Grab SSL Certificate">
 </div>
 <div class="title">Figure 1. Google Chrome Grab SSL Certificate</div>
 </div>
@@ -188,7 +247,7 @@ to any site that uses HTTPS to grab its certificate:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/ssl-instructions/002-ssl-init-grab.png" alt="Google Chrome Grab SSL Certificate Init" width="700" height="700">
+<img src="../_images/ssl-instructions/002-ssl-init-grab.png" alt="Google Chrome Grab SSL Certificate Init">
 </div>
 <div class="title">Figure 2. Google Chrome Grab SSL Certificate Init</div>
 </div>
@@ -197,7 +256,7 @@ to any site that uses HTTPS to grab its certificate:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/ssl-instructions/003-ssl-view-certificate.png" alt="View Certificate" width="700" height="700">
+<img src="../_images/ssl-instructions/003-ssl-view-certificate.png" alt="View Certificate">
 </div>
 <div class="title">Figure 3. View Certificate</div>
 </div>
@@ -206,7 +265,7 @@ to any site that uses HTTPS to grab its certificate:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/ssl-instructions/004-ssl-view-certificate-export.png" alt="Certificate Export" width="700" height="700">
+<img src="../_images/ssl-instructions/004-ssl-view-certificate-export.png" alt="Certificate Export">
 </div>
 <div class="title">Figure 4. Certificate Export</div>
 </div>
@@ -215,7 +274,7 @@ to any site that uses HTTPS to grab its certificate:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/ssl-instructions/005-ssl-view-certificate-export.png" alt="Init Certificate Export" width="700" height="700">
+<img src="../_images/ssl-instructions/005-ssl-view-certificate-export.png" alt="Init Certificate Export">
 </div>
 <div class="title">Figure 5. Init Certificate Export</div>
 </div>
@@ -224,7 +283,7 @@ to any site that uses HTTPS to grab its certificate:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/ssl-instructions/006-ssl-view-certificate-export-format-sel.png" alt="Cetificate Format" width="700" height="700">
+<img src="../_images/ssl-instructions/006-ssl-view-certificate-export-format-sel.png" alt="Cetificate Format">
 </div>
 <div class="title">Figure 6. Certificate Format</div>
 </div>
@@ -233,7 +292,7 @@ to any site that uses HTTPS to grab its certificate:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/ssl-instructions/007-ssl-view-certificate-export-file-sel.png" alt="Certificate Select File Name" width="700" height="700">
+<img src="../_images/ssl-instructions/007-ssl-view-certificate-export-file-sel.png" alt="Certificate Select File Name">
 </div>
 <div class="title">Figure 7. Certificate Select File Name</div>
 </div>
@@ -242,7 +301,7 @@ to any site that uses HTTPS to grab its certificate:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/ssl-instructions/008-ssl-view-certificate-export-overview.png" alt="Certificate Export Overview" width="700" height="700">
+<img src="../_images/ssl-instructions/008-ssl-view-certificate-export-overview.png" alt="Certificate Export Overview">
 </div>
 <div class="title">Figure 8. Certificate Export Overview</div>
 </div>
@@ -251,7 +310,7 @@ to any site that uses HTTPS to grab its certificate:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/ssl-instructions/009-ssl-view-certificate-export-successful.png" alt="Certificate Successful Export" width="700" height="700">
+<img src="../_images/ssl-instructions/009-ssl-view-certificate-export-successful.png" alt="Certificate Successful Export">
 </div>
 <div class="title">Figure 9. Certificate Successful Export</div>
 </div>
@@ -305,7 +364,7 @@ the certificate to the <strong><em>JDK</em></strong> you want to use.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">$ keytool -import -alias latest-cert -keystore cacerts -file latest-cert.cer</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ keytool -import -alias disney-latest-cert -keystore cacerts -file latest-cert.cer</code></pre>
 </div>
 </div>
 <div class="admonitionblock warning">
@@ -331,11 +390,11 @@ it should be changed if required.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>In the previous command, notice it uses an alias, <strong><em>latest-cert</em></strong> and
+<p>In the previous command, notice it uses an alias, <strong><em>disney-latest-cert</em></strong> and
 here <strong><em>latest-cert.cer</em></strong> is the file you downloaded.</p>
 </div>
 <div class="paragraph">
-<p>Besides when you need to supply a password, type the <strong><em>changeit</em></strong> . When you see
+<p>Besides when you need to supply a password, type the <strong><em>changeit</em></strong>. When you see
 the question "Trust this certificate? [n]:", type <strong>yes</strong>.</p>
 </div>
 </td>
@@ -347,7 +406,7 @@ the question "Trust this certificate? [n]:", type <strong>yes</strong>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">$ keytool -list -v -keystore cacerts -alias latest-cert</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ keytool -list -v -keystore cacerts -alias disney-latest-cert</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -355,47 +414,18 @@ the question "Trust this certificate? [n]:", type <strong>yes</strong>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">keytool -delete -alias latest-cert -keystore cacerts</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ keytool -delete -alias disney-latest-cert -keystore cacerts</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Finally you must provide the <strong><em>Java Cryptography Extension (JCE) Unlimited
+<p>Finally, you must provide the <strong><em>Java Cryptography Extension (JCE) Unlimited
 Strength Jurisdiction Policy Files 8 Download</em></strong>. These files can be obtained
 from the following link:
-<a href="https://www.oracle.com/java/technologies/javase-jce8-downloads.html" target="_blank" rel="noopener">JCE Unlimited Strengh Download</a>.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The <strong><em>Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy
-Files 8 Download</em></strong> is only for <strong>JDK 8</strong>.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The <strong><em>Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy
-Files 8 Download</em></strong> is only for <strong>JDK 8</strong>.</p>
-</div>
-</td>
-</tr>
-</table>
+<a href="https://www.oracle.com/java/technologies/javase-jce8-downloads.html" target="_blank" rel="noopener">JCE Unlimited Strength Download</a>.</p>
 </div>
 <div class="paragraph">
-<p>Extract these files and copy them in the <em>/lib/security</em> folder.</p>
+<p>Extract these files and copy them in the <em>[JAVA_HOME]/jre/lib/security</em> folder,
+for JDK 8 distribution.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -407,8 +437,35 @@ Files 8 Download</em></strong> is only for <strong>JDK 8</strong>.</p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In Java versions 8u151 and higher, the <strong>JCE</strong> framework uses the unlimited
+strength by default</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="referenes"><a class="anchor" href="#referenes"></a>Referenes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.baeldung.com/jce-enable-unlimited-strength">Enabling Unlimited Strength Cryptography in Java</a></p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="docker-cmds.html">Commands</a></span>
+  <span class="next"><a href="tomcat.html">Tomcat</a></span>
+</nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>

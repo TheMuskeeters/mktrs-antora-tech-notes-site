@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Jenkins :: The Muskeeters Tech Notes</title>
     <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.0/setup/tools/jenkins.html">
+    <link rel="prev" href="intellij-smart-tomcat.html">
+    <link rel="next" href="sonarqube.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../../_/css/site.css">
   </head>
@@ -49,13 +51,34 @@
     <a class="nav-link" href="git-github.html">Git/Github</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="docker.html">Docker</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="docker-desktop.html">Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="rancher-desktop.html">Rancher Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="docker-cmds.html">Commands</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="jdk.html">JDK</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="tomcat.html">Tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="intellij.html">IntelliJ</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="intellij-smart-tomcat.html">Smart Tomcat</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="jenkins.html">Jenkins</a>
@@ -171,7 +194,7 @@ to support building, deploying and automating any project.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h2>
+<h2 id="setup"><a class="anchor" href="#setup"></a>Setup</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The first thing to do is to download the software to be installed. It is recommended
@@ -183,7 +206,7 @@ to execute.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">$ cd /path/to/war/file
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ cd /path/to/war/file
 $ java -jar Jenkins.war --httpPort=7000 <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
@@ -309,7 +332,7 @@ credentials then the system may be void, unless you have more admin users set.</
 <p>This concludes <strong><em>Jenkins Configuration</em></strong>.</p>
 </div>
 <div class="sect2">
-<h3 id="_references"><a class="anchor" href="#_references"></a>References</h3>
+<h3 id="references"><a class="anchor" href="#references"></a>References</h3>
 <div class="paragraph">
 <p>Getting started with the Guided Tour
 <a href="https://jenkins.io/doc/pipeline/tour/getting-started/" class="bare">https://jenkins.io/doc/pipeline/tour/getting-started/</a></p>
@@ -325,6 +348,10 @@ credentials then the system may be void, unless you have more admin users set.</
 </div>
 </div>
 </div>
+<nav class="pagination">
+  <span class="prev"><a href="intellij-smart-tomcat.html">Smart Tomcat</a></span>
+  <span class="next"><a href="sonarqube.html">SonarQube</a></span>
+</nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>

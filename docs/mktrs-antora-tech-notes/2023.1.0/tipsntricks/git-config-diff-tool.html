@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Configure External Diff Tool :: The Muskeeters Tech Notes</title>
     <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.0/tipsntricks/git-config-diff-tool.html">
+    <link rel="prev" href="git-squash.html">
+    <link rel="next" href="asciidoctor-tips.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
@@ -49,13 +51,34 @@
     <a class="nav-link" href="../setup/tools/git-github.html">Git/Github</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../setup/tools/docker.html">Docker</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../setup/tools/docker-desktop.html">Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../setup/tools/rancher-desktop.html">Rancher Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../setup/tools/docker-cmds.html">Commands</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../setup/tools/jdk.html">JDK</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../setup/tools/tomcat.html">Tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../setup/tools/intellij.html">IntelliJ</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../setup/tools/intellij-smart-tomcat.html">Smart Tomcat</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../setup/tools/jenkins.html">Jenkins</a>
@@ -165,7 +188,7 @@ The purpose of this document is to setup such a tool to use inside the git comma
 </div>
 </div>
 <div class="sect1">
-<h2 id="_installing_visual_merge_tool"><a class="anchor" href="#_installing_visual_merge_tool"></a>Installing Visual Merge Tool</h2>
+<h2 id="installingvisualmergetool"><a class="anchor" href="#installingvisualmergetool"></a>Installing Visual Merge Tool</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Go to the following link to download <a href="https://www.perforce.com/downloads/visual-merge-tool" target="_blank" rel="noopener">Helix Visual Merge Tool</a>.</p>
@@ -251,7 +274,7 @@ sake of this guide, it will use the '<strong><em>Microsoft Windows</em></strong>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_configuring_git_merge_tool"><a class="anchor" href="#_configuring_git_merge_tool"></a>Configuring Git Merge Tool</h2>
+<h2 id="configuringgitmergetool"><a class="anchor" href="#configuringgitmergetool"></a>Configuring Git Merge Tool</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In this section we will indicate the steps to make the 'git client' to use the external tool in order to resolve merge conflicts in a
@@ -392,6 +415,10 @@ resolved.</p>
 </div>
 </div>
 </div>
+<nav class="pagination">
+  <span class="prev"><a href="git-squash.html">Squashing commits</a></span>
+  <span class="next"><a href="asciidoctor-tips.html">Asciidoctor</a></span>
+</nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
