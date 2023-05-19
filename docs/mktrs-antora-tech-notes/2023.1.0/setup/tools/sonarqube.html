@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SonarQube :: The Muskeeters Tech Notes</title>
+    <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.0/setup/tools/sonarqube.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://theowlo.blogspot.com">The Muskeeters Tech Notes</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="mktrs-antora-tech-notes" data-version="2023.1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">The Musketeers Tech Notes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Preface</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../flows.html">Processes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Setup Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="tools.html">Tools</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="git-github.html">Git/Github</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="docker.html">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jdk.html">JDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tomcat.html">Tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jenkins.html">Jenkins</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="sonarqube.html">SonarQube</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="insomnia.html">Insomnia</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cicd-javadev-guide.html">Docker/Jenkins/SonarQube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tipsntricks/index.html">Tips and Tricks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tipsntricks/git-tips.html">Git</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tipsntricks/git-squash.html">Squashing commits</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tipsntricks/git-config-diff-tool.html">Config Diff Tool</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/asciidoctor-tips.html">Asciidoctor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/maven-tips.html">Maven</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/lombok-tips.html">Lombok</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/sonarqube-tips.html">SonarQube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../references.html">References</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">The Musketeers Tech Notes</span>
+    <span class="version">2023.1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">The Musketeers Tech Notes</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../../index.html">2023.1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">The Musketeers Tech Notes</a></li>
+    <li><a href="../index.html">Setup Guides</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="sonarqube.html">SonarQube</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">SonarQube</h1>
+<div class="sect1">
+<h2 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first thing to do is to go to the official site
+<a href="https://www.sonarqube.org/" target="_blank" rel="noopener">SonarQube</a>.</p>
+</div>
+<div class="paragraph">
+<p>Download the latest release for the community version.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Sometimes you may need to download another archived version. So to do so,
+you can go to the following link and there you can download an archived version.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://binaries.sonarsource.com/Distribution/sonarqube/" class="bare">https://binaries.sonarsource.com/Distribution/sonarqube/</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Here we are going to use the version 7.4 at the time of writing.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/sonarqube/001-sonarqube-site.png" alt="SonarQube Download" width="700" height="700">
+</div>
+<div class="title">Figure 1. SonarQube Download</div>
+</div>
+<div class="paragraph">
+<p>This will lead you to version choice selection.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/sonarqube/002-sonarqube-download-selection.png" alt="SonarQube Download Selection" width="700" height="700">
+</div>
+<div class="title">Figure 2. SonarQube Download Selection</div>
+</div>
+<div class="paragraph">
+<p>After the download is finished, you will have a ZIP file, unarchive it to any
+place you like and remember that location as it will be the
+place where we  will execute the next steps.</p>
+</div>
+<div class="paragraph">
+<p>Before we launch the <strong><em>Sonarqube</em></strong> server we must consider changing some default values may you need it.
+Go to the location you have unarchived the software and go to the <strong><em>conf</em></strong> and open in your editor the file <strong><em>sonar.properties</em></strong>,
+locate the following properties (they are marked as comment indicating that they are defaults)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">sonar.embeddedDatabase.port=9092 <i class="conum" data-value="1"></i><b>(1)</b>
+sonar.web.port=9000 <i class="conum" data-value="2"></i><b>(2)</b>
+sonar.search.port=9001 <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Port used for embedded H2 (used for demostration purposes, configure a real database such as <strong><em>MySQL</em></strong>, consult <strong><em>SonarQube</em></strong> documentation). The 9092 is the default value, here it is changed to  4502.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Port used as the gateway to user to connect to <strong><em>SonarQube</em></strong> server. The 9000 is the default value, here it is changed to 4500.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Port for Search Engine used internally by <strong><em>SonarQube</em></strong>. The 9001 is the default value, here it is changed to 4501.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Save the file and now it is time to run the <strong><em>SonarQube</em></strong> server. Go to where you unarchived the software and locate the <strong><em>bin</em></strong> directory
+and select the the folder that matches your operating system, open a command line interface terminal and run the script named <strong><em>StartSonar.bat</em></strong>
+(in Windows), or <strong><em>sonar.sh</em></strong> in Unix-like operationg systems.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/sonarqube/003-sonarqube-startingup.png" alt="SonarQube Start Up" width="700" height="700">
+</div>
+<div class="title">Figure 3. SonarQube Start Up</div>
+</div>
+<div class="paragraph">
+<p>Wait until the console output indicates that server is up.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/sonarqube/004-sonarqube-server-up.png" alt="SonarQube Server Up" width="700" height="700">
+</div>
+<div class="title">Figure 4. SonarQube Server Up</div>
+</div>
+<div class="paragraph">
+<p>Open an internet browser to access <strong><em>SonarQube</em></strong> web interface, and locate its
+<strong>Login</strong> button, click on it and use the Admin/Admin credentials.
+Remember to use <strong><a href="http://localhost:4500" class="bare">http://localhost:4500</a></strong> to access this web interface.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The default credentials are for the full administrator of the system, it is advised you change it as soon as possible.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When setting up the server for the very first time and in Admin mode, the system allows you to use a two minute tutorial to make you up and runnig
+with the server (using the default <strong><em>Quality Profiles</em></strong> and <strong><em>Quality Gate</em></strong>).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/sonarqube/005-sonarqube-two-min-tutorial.png" alt="SonarQube Two Minute Tutorial" width="700" height="700">
+</div>
+<div class="title">Figure 5. SonarQube Two Minute Tutorial</div>
+</div>
+<div class="paragraph">
+<p>If you consider that you need to skip the tutorial, use the link at the bottom. Set the name for the token. As shown (or anything you like) and
+click the <strong><em>Generate</em></strong> button.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Write down that token name and the generated token somewhere as it will not be shown to you again as the note in the screen shows. You can grant
+or revoke it later in the administrative pages. We will use this token later when analyzing a Maven Java Project.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/sonarqube/006-sonarqube-two-min-tutorial-token.png" alt="SonarQube Two Minute Tutorial Token Generation" width="700" height="700">
+</div>
+<div class="title">Figure 6. SonarQube Two Minute Tutorial Token Generation</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Referenced here for documentation purposes.</p>
+</div>
+<div class="paragraph">
+<p><strong>Token:</strong> cdb29f0459415430c25aa9f5fa7b942714c7441a</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Antora default UI.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

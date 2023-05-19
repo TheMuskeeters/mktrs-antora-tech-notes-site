@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Jenkins :: The Muskeeters Tech Notes</title>
+    <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.0/setup/tools/jenkins.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://theowlo.blogspot.com">The Muskeeters Tech Notes</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="mktrs-antora-tech-notes" data-version="2023.1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">The Musketeers Tech Notes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Preface</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../flows.html">Processes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Setup Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="tools.html">Tools</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="git-github.html">Git/Github</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="docker.html">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jdk.html">JDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tomcat.html">Tomcat</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="jenkins.html">Jenkins</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="sonarqube.html">SonarQube</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="insomnia.html">Insomnia</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cicd-javadev-guide.html">Docker/Jenkins/SonarQube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tipsntricks/index.html">Tips and Tricks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tipsntricks/git-tips.html">Git</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tipsntricks/git-squash.html">Squashing commits</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tipsntricks/git-config-diff-tool.html">Config Diff Tool</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/asciidoctor-tips.html">Asciidoctor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/maven-tips.html">Maven</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/lombok-tips.html">Lombok</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/sonarqube-tips.html">SonarQube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../references.html">References</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">The Musketeers Tech Notes</span>
+    <span class="version">2023.1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">The Musketeers Tech Notes</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../../index.html">2023.1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">The Musketeers Tech Notes</a></li>
+    <li><a href="../index.html">Setup Guides</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="jenkins.html">Jenkins</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Jenkins</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>According to the <a href="https://jenkins.io" target="_blank" rel="noopener">Jenkins</a> site.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Build great things at any scale</strong></p>
+</div>
+<div class="paragraph">
+<p>The leading open source automation server, Jenkins provides hundreds of plugins
+to support building, deploying and automating any project.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Jenkins Site
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first thing to do is to download the software to be installed. It is recommended
+that you grab the <strong>Generic Java package (.war)</strong> file in the Long-term Support (LTS) section.</p>
+</div>
+<div class="paragraph">
+<p>Once you have downloaded the <strong>Generic Java package (.war)</strong> open a shell window
+to execute.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">$ cd /path/to/war/file
+$ java -jar Jenkins.war --httpPort=7000 <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Use this War file if not using a <strong><em>Docker</em></strong> image.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The first time it will run a setup process it will show application log in
+the terminal to see.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/jenkins/001-setup-first-step.png" alt="Jenkins First Step Setup" width="700" height="700">
+</div>
+<div class="title">Figure 1. Jenkins First Step Setup</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This magic number shown in screen varies in your installation, notice as well that a file with that
+number was created in path shown in picture. Folder path is in Windows format, adjust to your Operating
+System accordingly.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now you can go to <a href="http://localhost:7000" class="bare">http://localhost:7000</a> to continue with the configuration. The first time you access the
+site it will ask you for the secret number generated in the last step.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/jenkins/002-setup-unlock.png" alt="Jenkins Setup Unlock" width="700" height="700">
+</div>
+<div class="title">Figure 2. Jenkins Setup Unlock</div>
+</div>
+<div class="paragraph">
+<p>After giving the initial admin password to unlock the installation, you are now ready to <strong>Customize</strong> Jenkins.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/jenkins/003-customize-jenkins.png" alt="Customize Jenkins" width="700" height="700">
+</div>
+<div class="title">Figure 3. Jenkins Customize</div>
+</div>
+<div class="paragraph">
+<p>Here it is recommended to install the suggested plugins.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/jenkins/004-suggested-plugins.png" alt="Jenkins Suggested Plugins" width="700" height="700">
+</div>
+<div class="title">Figure 4. Jenkins Suggested Plugins</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>All shown suggested Plugins must be successfully installed. Reject if they are not compatible with the <strong><em>Jenkins</em></strong> installation you are trying to configure.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now it is time to register the super important rood admin user. Keep in mind that if you lose these
+credentials then the system may be void, unless you have more admin users set.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/jenkins/005-create-admin-user.png" alt="Jenkins Create First Admin User" width="700" height="700">
+</div>
+<div class="title">Figure 5. Jenkins Create First Admin User</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Keep these credentials in a secure place.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When all data is filled, click in the <strong><em>Save and Continue</em></strong> button.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/jenkins/006-instance-configuration.png" alt="Jenkins Instance Configuration" width="700" height="700">
+</div>
+<div class="title">Figure 6. Jenkins Instance Configuration</div>
+</div>
+<div class="paragraph">
+<p>This is the last step as the button <strong><em>Save and Finish</em></strong> button hints.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/jenkins/007-jenkins-ready.png" alt="Jenkins is Ready" width="700" height="700">
+</div>
+<div class="title">Figure 7. Jenkins is Ready</div>
+</div>
+<div class="paragraph">
+<p>This concludes <strong><em>Jenkins Configuration</em></strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="_references"><a class="anchor" href="#_references"></a>References</h3>
+<div class="paragraph">
+<p>Getting started with the Guided Tour
+<a href="https://jenkins.io/doc/pipeline/tour/getting-started/" class="bare">https://jenkins.io/doc/pipeline/tour/getting-started/</a></p>
+</div>
+<div class="paragraph">
+<p>Introducing Tutorials in the Jenkins User Documentation
+<a href="https://jenkins.io/blog/2017/11/27/tutorials-in-the-jenkins-user-documentation/" class="bare">https://jenkins.io/blog/2017/11/27/tutorials-in-the-jenkins-user-documentation/</a></p>
+</div>
+<div class="paragraph">
+<p>Introducing Jenkins X: a CI/CD solution for modern cloud applications on Kubernetes
+<a href="https://jenkins.io/blog/2018/03/19/introducing-jenkins-x/" class="bare">https://jenkins.io/blog/2018/03/19/introducing-jenkins-x/</a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Antora default UI.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

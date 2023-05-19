@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Squashing commits :: The Muskeeters Tech Notes</title>
+    <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.0/tipsntricks/git-squash.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://theowlo.blogspot.com">The Muskeeters Tech Notes</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="mktrs-antora-tech-notes" data-version="2023.1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">The Musketeers Tech Notes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Preface</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../flows.html">Processes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../setup/index.html">Setup Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../setup/tools/tools.html">Tools</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../setup/tools/git-github.html">Git/Github</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../setup/tools/docker.html">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../setup/tools/jdk.html">JDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../setup/tools/tomcat.html">Tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../setup/tools/jenkins.html">Jenkins</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../setup/tools/sonarqube.html">SonarQube</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../setup/tools/insomnia.html">Insomnia</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../setup/cicd-javadev-guide.html">Docker/Jenkins/SonarQube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Tips and Tricks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="git-tips.html">Git</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="git-squash.html">Squashing commits</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="git-config-diff-tool.html">Config Diff Tool</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="asciidoctor-tips.html">Asciidoctor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="maven-tips.html">Maven</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lombok-tips.html">Lombok</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sonarqube-tips.html">SonarQube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../references.html">References</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">The Musketeers Tech Notes</span>
+    <span class="version">2023.1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">The Musketeers Tech Notes</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../index.html">2023.1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">The Musketeers Tech Notes</a></li>
+    <li><a href="index.html">Tips and Tricks</a></li>
+    <li><a href="git-tips.html">Git</a></li>
+    <li><a href="git-squash.html">Squashing commits</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Squashing commits</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Aah, I will see my repo commits, <strong><strong>*Types git log</strong></strong>*</p>
+</div>
+<div class="paragraph">
+<p>OMG, 10 COMMITS ONLY FOR THAT FEATURE.</p>
+</div>
+<div class="paragraph">
+<p>Narrator: Ahh, that problem, you use a LOT of commits only for that thing, your repo is flooded with commits.</p>
+</div>
+<div class="paragraph">
+<p>🎵 <strong>[Commercial Music Playing]</strong> 🎵</p>
+</div>
+<div class="paragraph">
+<p>Well, no more for only $19.99'⁹⁹ you can buy the CCAG (Commit Collection And Grouping).</p>
+</div>
+<div class="paragraph">
+<p>🎵 <strong>[Glitch Sound Effects]</strong> 🎵</p>
+</div>
+<div class="paragraph">
+<p>Ehem, Sorry for that, in this document I will explain you how to <strong>SQUASH COMMITS</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what"><a class="anchor" href="#_what"></a>What?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We use the term "<strong>Squash commits</strong>" to refer to the action of compressing any number of commits into one single and forever alone with no friends and no companion commit.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_we_do_that"><a class="anchor" href="#_how_we_do_that"></a>How we do that?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First of all you need commits to squash (Obviously) and also you need GIT (Germany Incredible Towers&#8230;&#8203;.. Not really).</p>
+</div>
+<div class="paragraph">
+<p>Then we need to have an editor installed (Don&#8217;t know if VSCode works), a editor like "Vim" or "Neovim"&#8230;&#8203; I think I am forgetting one&#8230;&#8203; Ahmm&#8230;&#8203; Oh yeah "Nano".</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s get into action, first run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">$ git log</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To see commits:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">commit ad828a2e4fa6ef63ef155aef3c33a7909f6074c3
+Author: Your Name &lt;your@email.com&gt;
+Date:   Date of Commit
+
+    1 char change for Feature X
+
+commit a84e98cce77371176a587259b9ebaf255694342c
+Author: Your Name &lt;your@email.com&gt;
+Date:   Date of Commit
+
+    Working on Feature X
+
+commit 148b5aa043159c6997ec46bc8122c1b0649e769b
+Author: Your Name &lt;your@email.com&gt;
+Date:   Date of Commit
+
+    Preparing Feature X
+
+commit 687ed1b2af2e3dcb3c1b078f49bfb68a4d5762b0
+Author: Your Name &lt;your@email&gt;
+Date:   Date of Commit
+
+    Feature C</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We will squash from "Preparing Feature X" to "1 char change for Feature X" onto "Feature X"</p>
+</div>
+<div class="paragraph">
+<p>For that we run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">$ git rebase --interactive &lt;hash-of-commit-1&gt; &lt;hash-of-commit-2&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In my case is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-terminal hljs" data-lang="terminal">$ git rebase --interactive 148b5 ad828</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It will open the editor you defined in .gitconfig in the form core.editor:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-neovim hljs" data-lang="neovim">pick ad828a2 1 char change for Feature X
+pick a84e98c Working on Feature X
+pick 148b5aa Preparing Feature X
+
+# Rebase 687ed1b..ad828a2 onto ad828a2 (3 commands)
+#
+# Commands:
+# p, pick &lt;commit&gt; = use commit
+# r, reword &lt;commit&gt; = use commit, but edit the commit message
+# e, edit &lt;commit&gt; = use commit, but stop for amending
+# s, squash &lt;commit&gt; = use commit, but meld into previous commit
+# f, fixup &lt;commit&gt; = like "squash", but discard this commit's log message
+# x, exec &lt;command&gt; = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop &lt;commit&gt; = remove commit
+# l, label &lt;label&gt; = label current HEAD with a name
+# t, reset &lt;label&gt; = reset HEAD to a label
+# m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c &lt;commit&gt; to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then we replace pick for s (squash) except for the first one:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-neovim hljs" data-lang="neovim">pick ad828a2 1 char change for Feature X
+s a84e98c Working on Feature X
+s 148b5aa Preparing Feature X
+# Rebase 687ed1b..ad828a2 onto ad828a2 (3 commands)
+#
+# Commands:
+# p, pick &lt;commit&gt; = use commit
+# r, reword &lt;commit&gt; = use commit, but edit the commit message
+# e, edit &lt;commit&gt; = use commit, but stop for amending
+# s, squash &lt;commit&gt; = use commit, but meld into previous commit
+# f, fixup &lt;commit&gt; = like "squash", but discard this commit's log mess
+age
+# x, exec &lt;command&gt; = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop &lt;commit&gt; = remove commit
+# l, label &lt;label&gt; = label current HEAD with a name
+# t, reset &lt;label&gt; = reset HEAD to a label
+# m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c &lt;commit&gt; to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We save and exit, then it will prompt again for a commit message:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-neovim hljs" data-lang="neovim"># This is a combination of 3 commits.
+# This is the 1st commit message:
+1 char change for Feature X
+
+# This is the commit message #2:
+
+Working on Feature X
+
+# This is the commit message #3:
+
+Preparing Feature X
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# interactive rebase in progress; onto ad828a2
+# Last commands done (3 commands done):
+#    pick b7e7071 1 char change for Feature X
+#    squash 5bb5b1a Working on Feature X
+#    squash 148b5aa Preparing Feature X
+# No commands remaining
+# You are currently rebasing branch 'master' on 'ad828a2'.
+#
+# Changes to be committed:
+#       modified:   folder/file.filetype
+#</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You then type the commit message and delete everything except of your commit message, or delete every other commit message except from the one you typed new or just comment the others except for yours.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_success"><a class="anchor" href="#_success"></a>Success</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An that&#8217;s it for this tip.</p>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Antora default UI.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

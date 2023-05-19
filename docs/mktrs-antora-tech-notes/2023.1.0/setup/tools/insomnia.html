@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Insomnia :: The Muskeeters Tech Notes</title>
+    <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.0/setup/tools/insomnia.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://theowlo.blogspot.com">The Muskeeters Tech Notes</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="mktrs-antora-tech-notes" data-version="2023.1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">The Musketeers Tech Notes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Preface</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../flows.html">Processes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Setup Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="tools.html">Tools</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="git-github.html">Git/Github</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="docker.html">Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jdk.html">JDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tomcat.html">Tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jenkins.html">Jenkins</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="sonarqube.html">SonarQube</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="insomnia.html">Insomnia</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cicd-javadev-guide.html">Docker/Jenkins/SonarQube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tipsntricks/index.html">Tips and Tricks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tipsntricks/git-tips.html">Git</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tipsntricks/git-squash.html">Squashing commits</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tipsntricks/git-config-diff-tool.html">Config Diff Tool</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/asciidoctor-tips.html">Asciidoctor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/maven-tips.html">Maven</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/lombok-tips.html">Lombok</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/sonarqube-tips.html">SonarQube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../references.html">References</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">The Musketeers Tech Notes</span>
+    <span class="version">2023.1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">The Musketeers Tech Notes</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../../index.html">2023.1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">The Musketeers Tech Notes</a></li>
+    <li><a href="../index.html">Setup Guides</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="insomnia.html">Insomnia</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Insomnia</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Insomnia is a free cross-platform desktop application that takes the pain out of
+interacting with and designing HTTP-based APIs. Insomnia combines an easy-to-use
+interface with advanced functionality like authentication helpers, code
+generation, and environment variables.</p>
+</div>
+<div class="paragraph">
+<p>You can access its web site page at <a href="https://insomnia.rest/" target="_blank" rel="noopener">Insomnia Web Site</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/001-insomnia-web-home.png" alt="Insomnia Home Web Page">
+</div>
+<div class="title">Figure 1. Insomnia Home Web Page</div>
+</div>
+<div class="paragraph">
+<p>Here is the direct link for the <a href="https://insomnia.rest/download" target="_blank" rel="noopener">download</a> page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/002-insomnia-web-download.png" alt="Insomnia Download Page">
+</div>
+<div class="title">Figure 2. Insomnia Download Page</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This document is based on the UI for version 2021.3.0.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_features"><a class="anchor" href="#_features"></a>Features</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Create and send HTTP requests</p>
+</li>
+<li>
+<p>Authorization header helpers</p>
+</li>
+<li>
+<p>Maintains responses history per request</p>
+</li>
+<li>
+<p>Manages cookies like a web browser does</p>
+</li>
+<li>
+<p>Use certificates for client authentication</p>
+</li>
+<li>
+<p>Generate code snippets</p>
+</li>
+<li>
+<p>View raw HTTP traffic</p>
+</li>
+<li>
+<p>Environment and variables</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Get the installer from the <a href="https://insomnia.rest/download" target="_blank" rel="noopener">download</a> page
+and execute its installer to have it available in your operating system.</p>
+</div>
+<div class="paragraph">
+<p>When you run it for the first time, you will be presented with the onboarding
+screen.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/003-insomnia-setup-onboarding.png" alt="Insomnia Onboarding">
+</div>
+<div class="title">Figure 3. Insomnia Onboarding</div>
+</div>
+<div class="paragraph">
+<p>After you do this process you are presented with the home screen.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/004-insomnia-home.png" alt="Insomnia Home">
+</div>
+<div class="title">Figure 4. Insomnia Home</div>
+</div>
+<div class="paragraph">
+<p>Where in the image:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Indicates the section where you can configure and set you as an user.</p>
+</li>
+<li>
+<p>The list of workspaces or document/collections registered in the system.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>By default <strong>Insomnia</strong> is installed with a <em>Document</em>, which allows to design
+your <strong>API</strong> named <strong><em>Swagger Petstore 1.0.2</em></strong> and a <em>Collection</em> which allow to
+place your <strong>ÄPI</strong> requests named <strong><em>Insomnia</em></strong> as it is shown in the image above.</p>
+</div>
+<div class="paragraph">
+<p>Here you can create request collection or design an API.
+Most of the time as developers we use this tool as a <strong>Request Collection</strong> and as
+such this document focuses in explaining how to create a request and setting up
+the environment variables.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>There are a lot of features that the application has and it will not be covered
+here.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_insomnia"><a class="anchor" href="#_using_insomnia"></a>Using Insomnia</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let&#8217;s begin our journey by creating a new <em>Collection</em>. To do so, locate the
+button <strong><em>Create</em></strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/005-insomnia-create-collection.png" alt="Insomnia Create Collection">
+</div>
+<div class="title">Figure 5. Insomnia Create Collection</div>
+</div>
+<div class="paragraph">
+<p>Then it shows up a dialog to name the <strong>request</strong> collection, for the purpose of
+this document it is named <strong>Teach Insomnia</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/006-insomnia-create-collection-teach.png" alt="Insomnia Create Collection">
+</div>
+<div class="title">Figure 6. Insomnia Create Collection Set Name</div>
+</div>
+<div class="paragraph">
+<p>You will see a place to start working with your <strong>request</strong> collection.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/007-insomnia-worskpace-teach.png" alt="Request Collection Workspace">
+</div>
+<div class="title">Figure 7. Request Collection Workspace</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>As we need to explain how to create <strong>Environment</strong> settings for a request,
+this guide uses a <strong>Spring Boot</strong> generated app in order to simulate environments
+for a <strong>request</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The named environments will be <strong>LATEST</strong>, <strong>STAGE</strong>, <strong>LOAD</strong>, <strong>PROD</strong> which are a
+typical environments which a developer needs to test its <strong>API</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The endpoint we will be using is the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/hello/say/LATEST' \ <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="2"></i><b>(2)</b>
+  --compressed</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><a href="http://localhost:8080" class="bare">http://localhost:8080</a> is the host, port for the endpoint, an environment
+variable is set around this.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><strong>LATEST</strong> is the parameter we pass to the endpoint to indicate that it knows
+which environment was sent. This is configured via an environment variable.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The source code for this endpoint is located in the <a href="https://github.com/cortizqgithub/csoftz-poc" target="_blank" rel="noopener">csoftz-poc</a>
+repository under the folder <strong>app_code/app-code/java</strong> with the name
+<strong><em>spring-antora-example-service</em></strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Notice that we use here a command line util to request data over <strong>HTTP</strong> in
+terminal window. In insomnia you can create a new <strong>request</strong> by importing that
+command and it will take care of registering it into the system in their
+constituent parts as query parameters, headers, etc.</p>
+</div>
+<div class="paragraph">
+<p>In what follows, we will convert that <strong>URL</strong> to use environment configuration to
+allow it to be used for different environments as mentioned earlier.</p>
+</div>
+<div class="sect2">
+<h3 id="_creating_a_request"><a class="anchor" href="#_creating_a_request"></a>Creating a request</h3>
+<div class="paragraph">
+<p>Let&#8217;s create our first <strong>request</strong>. Click in the button <strong>New Request</strong> or use the
+keyboard setting for that depending on your operationg system.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It is left to you to read the documentation of the <strong>Insomnia</strong> application to
+find the different ways to create a <strong>request</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following appears</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/008-insomnia-create-new-request.png" alt="Create New Request">
+</div>
+<div class="title">Figure 8. Create New Request</div>
+</div>
+<div class="paragraph">
+<p>Here you name it whatever you like, for this example it is named as
+<strong><em>Retrieve Hello Message</em></strong>, click then in the <strong>Create</strong> button.</p>
+</div>
+<div class="paragraph">
+<p>The system presents you with a work area where you can start configuring
+your <strong>request</strong>. We use here a quick import for that definition.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_import_request"><a class="anchor" href="#_import_request"></a>Import Request</h3>
+<div class="paragraph">
+<p>Select and copy the curl command we presented before and paste it in the <strong>URL</strong>
+input box for the <strong>request</strong> as shown next.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/009-insomnia-import-request.png" alt="Import Request">
+</div>
+<div class="title">Figure 9. Import Request</div>
+</div>
+<div class="paragraph">
+<p>After the text is there, click in the <strong>Send</strong> button to the left of it, <strong>Insomnia</strong>
+will parse your command and configure your <strong>request</strong> in the different constituent
+parts as you can see in the various tabs and method verb used.</p>
+</div>
+<div class="paragraph">
+<p>Now we have a working request.
+Next, it is time to configure the environments in order to accomplish our usage
+of getting calls to any environment, be it <strong>LATEST</strong>, <strong>STAGE</strong>, <strong>LOAD</strong>,
+<strong>LOCALHOST</strong> or <strong>PROD</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_environments"><a class="anchor" href="#_configuring_environments"></a>Configuring Environments</h3>
+<div class="paragraph">
+<p>In the upper left of the screen you see an option named <strong>No Environment</strong> with a
+down arrow, click on it, a drop down shows up, select the <strong>Manage Environment</strong>
+there, a popup window will show.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/010-insomnia-manage-environments.png" alt="Manage Environments">
+</div>
+<div class="title">Figure 10. Manage Environments</div>
+</div>
+<div class="paragraph">
+<p>As indicated, we create all of the sub environments to ease the explanations
+that follow, click in the <strong>+</strong> to create and <em>Environment</em> or <em>Private Environment</em>,
+by default it creates an <em>Environment</em>. It names is as <strong>New Environment</strong>, by
+double-clicking on it, you can rename it, do so for <strong>LATEST</strong>, and repeat the
+process for <strong>STAGE</strong>, <strong>LOAD</strong>, <strong>PROD</strong>, and <strong>LOCALHOST</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Another nice feature is to give color to the environment. To do so, select
+the combobox named <strong>Color</strong> at the top right. Notice other options can be applied
+here.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Color configuration for Environments</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Environment</th>
+<th class="tableblock halign-left valign-top">Color RGB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>LATEST</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(0,0,255)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>STAGE</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(0,190,255)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>LOAD</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(0,255,0)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PROD</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(255,0,0)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>LOCALHOST</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(0,0,0)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You may use the color you like best.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now that we have our <strong>Sub Environments</strong> created, we now need to populate the
+environment variables definitions.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In what follows, it is necessary to select any of the <strong>Environment</strong> we have
+defined in order to let <strong>Insomnia</strong> know to which it is referring to, and to
+properly associate <strong>Environment</strong> items. To do so, go to the main window and
+in locate the <strong>No Environment</strong> drop-down box and select <strong>Use LATEST</strong> to
+activate it.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In the <strong>Manage Environment</strong> dialog, you see a section named <strong>Base Environment</strong>,
+which refers to the main area where <strong>Environment</strong> is defined taking values from
+any <strong>Sub Environment</strong> section as shown next.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/011-insomnia-manage-environment-populated.png" alt="Manage Environments (populated)">
+</div>
+<div class="title">Figure 11. Manage Environments (Populated)</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When defining <strong>Environment</strong> items, <strong>Insomnia</strong> uses the <strong><em>JSON</em></strong> format to
+declare that configuration.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now it is time to declare a way to properly pass a value to the sample <strong>URL</strong>
+to the parameter text <strong><em>LATEST</em></strong>. As this depends on an <strong>ENVIRONMENT</strong>, we start
+to define a variable in the <strong>Base</strong> section with name <strong><em>param</em></strong> (of course, you
+can name it according to the context in your configuration).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "param" : "" <i class="conum" data-value="1"></i><b>(1)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Define a variable in the <strong>Base</strong> section of the <strong>Manage Environments</strong> dialog.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Notice we left the value as an empty string as we have not defined the reference
+in any of the <strong>Sub Environments</strong> sections. Click on the left to use the <strong>LATEST</strong>
+<strong>Sub Environment</strong>, and you see there that an empty <strong>JSON</strong> definition.</p>
+</div>
+<div class="paragraph">
+<p>Type the following there</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+   "param_env" : "LATEST" <i class="conum" data-value="1"></i><b>(1)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Repeat the same step for every <strong>Sub Environment</strong>, putting in the value the
+name of the <strong>Environment</strong> where it is defined.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>As an easy convention to name variables here, observe how we named the <strong>param</strong>
+variable. The prefix is the name we wrote in the <strong>Base</strong> section and the suffix
+adds the part <strong>_env</strong>, forming the variable as <strong>param_env</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now that we have it defined in every <strong>Sub Environment</strong>, it is time to return to
+the <strong>Base</strong> section to complete the value for the <strong>param Environment</strong> variable.</p>
+</div>
+<div class="paragraph">
+<p>Position the cursor inside the quotation marks and write <strong>{{ param_env }}</strong> (
+notice the double curly braces around it and you may include the space around
+it or not, the application recognizes any form) manually,
+to which <strong>Insomnia</strong> will recognize as a Custom Variable and will denote it
+visually as shown next.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/012-insomnia-edit-variable.png" alt="Edit Variable">
+</div>
+<div class="title">Figure 12. Edit Variable</div>
+</div>
+<div class="paragraph">
+<p>For the cues there</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Shows how <strong>Insomnia</strong> indicates it is a custom variable.</p>
+</li>
+<li>
+<p>If you double click over the <strong>param_env</strong> box, it opens this dialog, where
+you can edit its properties. Notice it has a <strong>Live Preview</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Now we are ready to modify the <strong>request</strong> to use this <strong>param</strong> <strong>Environment</strong> variable.</p>
+</div>
+<div class="paragraph">
+<p>Click in the <strong>Done</strong> button (located at the bottom right corner) to save the changes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_modify_request_to_use_enivornment_variable"><a class="anchor" href="#_modify_request_to_use_enivornment_variable"></a>Modify Request to use Enivornment Variable</h3>
+<div class="paragraph">
+<p>Select the <strong>Retrieve Hello Message</strong> <em>request</em> to load it. Now replace the current
+text</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">http://localhost:8080/api/v1/hello/say/LATEST</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>with the following text</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">http://localhost:8080/api/v1/hello/say/{{param}} <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Notice that this refers to the <strong>Environment</strong> variable defined in the <strong>Base</strong>
+section in the <strong>Manage Environments</strong> dialog.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you hit the <strong>Send</strong> button you will see the execution of this <strong><em>request</em></strong>, like</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/013-insomnia-request-definition-data.png" alt="Request with Environment Variable">
+</div>
+<div class="title">Figure 13. Request with Environment Variable (param)</div>
+</div>
+<div class="paragraph">
+<p>In the last image, pay special attention to the highlighted parts. Now if you
+change the <strong>Environment</strong> it uses the value defined to send to the <strong>URL</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Now you can practice to define a new <strong>Environment</strong> variable named <strong>hellosvc</strong> so
+the following image looks like this.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The naming convention used for the <strong>Environment</strong> variables depends on your
+organization or personal preferences on the matter.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/014-insomnia-request-fully-parameterized.png" alt="Request with Environment Variables (Complete)">
+</div>
+<div class="title">Figure 14. Request with Environment Variables (Complete)</div>
+</div>
+<div class="paragraph">
+<p>Now that you know how to define these <strong>Environment</strong> variables, you can use them
+wherever there is an input in the application.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_template_tags"><a class="anchor" href="#_using_template_tags"></a>Using Template Tags</h3>
+<div class="paragraph">
+<p>There comes a time when you need to use the value computed from another
+<strong>request</strong>. By using a <strong>Template Tag</strong> you can accomplish this task. Let&#8217;s see
+how this is created.</p>
+</div>
+<div class="paragraph">
+<p>First create another <strong>request</strong> named <strong>Retrieve User</strong> by using the following
+definition (import it or create it manually).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl --request GET \
+  --url http://localhost:8080/api/v1/hello/extract/user <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Remember to replace <a href="http://localhost:8080" class="bare">http://localhost:8080</a> with the <strong>Environment</strong> variable
+<strong>hellosvc</strong>.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After you call this <strong>URL</strong> the response it gives us is shown as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "id": "73fd70c1-d13b-4316-8266-b60b235a2632",
+  "name": "User",
+  "surname": "Name"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And we are interested in retrieving the <strong>id</strong> field and use this as the query
+parameter in the <strong>Retrieve Hello Message</strong> request.</p>
+</div>
+<div class="paragraph">
+<p>One nice thing that the <strong>Insomnia</strong> application offers is that you can extract
+values from <strong>JSON</strong> using a <strong>JSONPath</strong> syntax.</p>
+</div>
+<div class="paragraph">
+<p>Open the <strong>Manage Environments</strong> to define a new variable named <strong>userId</strong>. As this
+is a global <strong>Environment</strong> variable, it is declared in the <strong>Base</strong> section.</p>
+</div>
+<div class="paragraph">
+<p>Later, position the cursor insde the quotation mark for its value and start
+typing <strong>response</strong> and wait about one second when a popup autocomplete shows up.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/015-insomnia-select-response-body-attribute.png" alt="Template Tag Response Body Attribute">
+</div>
+<div class="title">Figure 15. Template Tag Response Body Attribute</div>
+</div>
+<div class="paragraph">
+<p>After you select it and as this is the first time this <strong>Template Tag</strong> shows next</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/016-insomnia-response-attribute-properties.png" alt="Template Tag Response Body Attribute">
+</div>
+<div class="title">Figure 16. Template Tag Response Body Attribute (Properties)</div>
+</div>
+<div class="paragraph">
+<p>Where
+. When click the orange the popup shown in (2) is presented.
+. Popup window to define the properties to use.</p>
+</div>
+<div class="paragraph">
+<p>In the previous popup window select the <strong>Request</strong> named <strong>GET Retrieve User</strong>
+and in the <strong>Filter (JSONPath or XPath)</strong> type the following.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">$.id</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>While you are typing the <strong>JSONPath</strong> expresssion, notice that in the <strong>Live Preview</strong>
+the system will evaluate and show the current text.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Click <strong>Done</strong> button (bottom left corner) to accept the changes.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Remember that you are editing a <strong>JSON</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Now you must see the final definition of this <strong>Template Tag</strong> as shown next.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/017-insomnia-response-attribute-complete.png" alt="Template Tag Response Body Attribute (Complete)">
+</div>
+<div class="title">Figure 17. Template Tag Response Body Attribute (Complete)</div>
+</div>
+<div class="paragraph">
+<p>Now that we have completed this definition, you can use in any <strong>request</strong>
+wherever an input text can be typed. To ilustrate this, we send a query parameter
+in the <strong>Retrieve Hello Message</strong> request.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/insomnia/018-insomnia-retrieve-hello-message-complete.png" alt="Retrieve Hello Message (Compete)">
+</div>
+<div class="title">Figure 18. Retrieve Hello Message (Compete)</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Antora default UI.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
