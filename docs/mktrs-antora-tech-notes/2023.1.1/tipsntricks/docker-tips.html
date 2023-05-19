@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Lombok :: The Muskeeters Tech Notes</title>
-    <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.1/tipsntricks/lombok-tips.html">
-    <link rel="prev" href="maven-tips.html">
-    <link rel="next" href="sonarqube-tips.html">
+    <title>Docker :: The Muskeeters Tech Notes</title>
+    <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.1/tipsntricks/docker-tips.html">
+    <link rel="prev" href="sonarqube-tips.html">
+    <link rel="next" href="unix-tips.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
@@ -118,13 +118,13 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="maven-tips.html">Maven</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="lombok-tips.html">Lombok</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="sonarqube-tips.html">SonarQube</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="docker-tips.html">Docker</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -170,23 +170,113 @@
   <ul>
     <li><a href="../index.html">The Musketeers Tech Notes</a></li>
     <li><a href="index.html">Tips and Tricks</a></li>
-    <li><a href="lombok-tips.html">Lombok</a></li>
+    <li><a href="docker-tips.html">Docker</a></li>
   </ul>
 </nav>
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Lombok</h1>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Ignoring Lombok Code in Jacoco</strong> <a href="https://www.rainerhahnekamp.com/en/ignoring-lombok-code-in-jacoco/" class="bare">https://www.rainerhahnekamp.com/en/ignoring-lombok-code-in-jacoco/</a></p>
-</li>
-</ul>
+<h1 class="page">Docker</h1>
+<div class="sect1">
+<h2 id="createimage"><a class="anchor" href="#createimage"></a>Create Image</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ docker build -t [IMAGE-NAME]:[TAGVERSION] . <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Build a new image and gives it the name '[IMAGE-NAME]:[TAGVERSION]'.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="runimage"><a class="anchor" href="#runimage"></a>Run Image</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ docker run -d --name [CONTAINER-NAME] [IMAGE-NAME]:[TAGVERSION] <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Creates a new container process.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="runbinshincontainer"><a class="anchor" href="#runbinshincontainer"></a>Run /bin/sh in Container</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ docker exec -it [CONTAINER-NAME] /bin/sh <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This runs the /bin/sh shell in the container '[CONTAINER-NAME]'.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pruneimages"><a class="anchor" href="#pruneimages"></a>Prune images</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ docker image prune --force</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Sometimes we need to remove those images where the repository is marked as &lt;none&gt;
+and so the version.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="removelocalimage"><a class="anchor" href="#removelocalimage"></a>Remove local image</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ docker rmi [OPTIONS] IMAGE [IMAGE...] <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Refer to <a href="https://docs.docker.com/engine/reference/commandline/rmi/">Docker </a></td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="maven-tips.html">Maven</a></span>
-  <span class="next"><a href="sonarqube-tips.html">SonarQube</a></span>
+  <span class="prev"><a href="sonarqube-tips.html">SonarQube</a></span>
+  <span class="next"><a href="unix-tips.html">Unix</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

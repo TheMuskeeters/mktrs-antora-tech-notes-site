@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Lombok :: The Muskeeters Tech Notes</title>
-    <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.1/tipsntricks/lombok-tips.html">
-    <link rel="prev" href="maven-tips.html">
-    <link rel="next" href="sonarqube-tips.html">
+    <title>Unix :: The Muskeeters Tech Notes</title>
+    <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.1/tipsntricks/unix-tips.html">
+    <link rel="prev" href="docker-tips.html">
+    <link rel="next" href="../glossary.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
@@ -118,7 +118,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="maven-tips.html">Maven</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="lombok-tips.html">Lombok</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -127,7 +127,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="docker-tips.html">Docker</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="unix-tips.html">Unix</a>
   </li>
 </ul>
@@ -170,23 +170,71 @@
   <ul>
     <li><a href="../index.html">The Musketeers Tech Notes</a></li>
     <li><a href="index.html">Tips and Tricks</a></li>
-    <li><a href="lombok-tips.html">Lombok</a></li>
+    <li><a href="unix-tips.html">Unix</a></li>
   </ul>
 </nav>
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Lombok</h1>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Ignoring Lombok Code in Jacoco</strong> <a href="https://www.rainerhahnekamp.com/en/ignoring-lombok-code-in-jacoco/" class="bare">https://www.rainerhahnekamp.com/en/ignoring-lombok-code-in-jacoco/</a></p>
-</li>
-</ul>
+<h1 class="page">Unix</h1>
+<div class="sect1">
+<h2 id="gettingenv"><a class="anchor" href="#gettingenv"></a>Getting ENV</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ env <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Prints all the environment variables present in the system.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="findafile"><a class="anchor" href="#findafile"></a>Find a file</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ find / -name "log*" <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>From the "/" look for any file containing "log".</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getbinshenv"><a class="anchor" href="#getbinshenv"></a>Get /bin/sh ENV</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ env <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Prints in console all of the environment set key/values defined in the
+Operating System.</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="maven-tips.html">Maven</a></span>
-  <span class="next"><a href="sonarqube-tips.html">SonarQube</a></span>
+  <span class="prev"><a href="docker-tips.html">Docker</a></span>
+  <span class="next"><a href="../glossary.html">Glossary</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
