@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Rancher Desktop :: The Muskeeters Tech Notes</title>
+    <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.1/setup/tools/rancher-desktop.html">
+    <link rel="prev" href="docker-desktop.html">
+    <link rel="next" href="docker-cmds.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://theowlo.blogspot.com">The Muskeeters Tech Notes</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="mktrs-antora-tech-notes" data-version="2023.1.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">The Musketeers Tech Notes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Preface</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../flows.html">Processes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Setup Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="tools.html">Tools</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="git-github.html">Git/Github</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="docker.html">Docker</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="docker-desktop.html">Docker Desktop</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="rancher-desktop.html">Rancher Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="docker-cmds.html">Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jdk.html">JDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tomcat.html">Tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="intellij.html">IntelliJ</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="intellij-smart-tomcat.html">Smart Tomcat</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jenkins.html">Jenkins</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="sonarqube.html">SonarQube</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="insomnia.html">Insomnia</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cicd-javadev-guide.html">Docker/Jenkins/SonarQube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tipsntricks/index.html">Tips and Tricks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tipsntricks/git-tips.html">Git</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tipsntricks/git-squash.html">Squashing commits</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tipsntricks/git-config-diff-tool.html">Config Diff Tool</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/asciidoctor-tips.html">Asciidoctor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/maven-tips.html">Maven</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/lombok-tips.html">Lombok</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/sonarqube-tips.html">SonarQube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../references.html">References</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">The Musketeers Tech Notes</span>
+    <span class="version">2023.1.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">The Musketeers Tech Notes</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../../index.html">2023.1.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">The Musketeers Tech Notes</a></li>
+    <li><a href="../index.html">Setup Guides</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="docker.html">Docker</a></li>
+    <li><a href="rancher-desktop.html">Rancher Desktop</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Rancher Desktop</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Alternative to Docker Desktop (it is now paid)</p>
+</div>
+<div class="paragraph">
+<p>WIP</p>
+</div>
+<div class="paragraph">
+<p><a href="https://rancherdesktop.io/" class="bare">https://rancherdesktop.io/</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/rancher-desktop/001-rancher-desktop-site.png" alt="Rancher Desktop Site">
+</div>
+<div class="title">Figure 1. Rancher Desktop Site</div>
+</div>
+<div class="paragraph">
+<p>Next locate the <strong>Download</strong> section and select the version you need for your
+<strong>Operating System</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/rancher-desktop/005-rancher-desktop-site-download.png" alt="Rancher Desktop Site (Download Section)">
+</div>
+<div class="title">Figure 2. Rancher Desktop Site (Download Section)</div>
+</div>
+<div class="paragraph">
+<p>Click in the <strong>Install Rancher Desktop</strong> button  and select the artifact for
+your operating system.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This guide uses Microsoft Windows.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Click in <strong>I Agree</strong> button.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/rancher-desktop/002-rancher-desktop-setup-init.png" alt="Rancher Desktop Init">
+</div>
+<div class="title">Figure 3. Rancher Desktop Setup Init</div>
+</div>
+<div class="paragraph">
+<p>The process of installation begins</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/rancher-desktop/003-rancher-desktop-installing.png" alt="Rancher Desktop Installing">
+</div>
+<div class="title">Figure 4. Rancher Desktop Setup Installing</div>
+</div>
+<div class="paragraph">
+<p>After installing it tells you this.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/rancher-desktop/004-rancher-desktop-setup-end.png" alt="Rancher Desktop Finish">
+</div>
+<div class="title">Figure 5. Rancher Desktop Setup Finish</div>
+</div>
+<div class="paragraph">
+<p>When you click the <strong>Finish</strong> button it executes the <strong>Rancher Desktop</strong> application
+for the first time.</p>
+</div>
+<div class="paragraph">
+<p>It will popup a window requesting the architecture to use for managing the
+images, processes, etc.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/rancher-desktop/006-rancher-desktop-first-time.png" alt="Rancher Desktop First Time">
+</div>
+<div class="title">Figure 6. Rancher Desktop First Time</div>
+</div>
+<div class="paragraph">
+<p>After you select the option to use, it will show up the following screen.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/rancher-desktop/007-rancher-desktop-ui.png" alt="Rancher Desktop User Interface">
+</div>
+<div class="title">Figure 7. Rancher Desktop User Interface</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="troubleshooting"><a class="anchor" href="#troubleshooting"></a>Troubleshooting</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="wslvpnissue"><a class="anchor" href="#wslvpnissue"></a>WSL VPN Issue</h3>
+<div class="paragraph">
+<p>For <em>Rancher Desktop</em> V1.0 it is necessary to use the following configuration
+in order to overcome any problem when connected to a VPN.</p>
+</div>
+<div class="paragraph">
+<p>For Windows:</p>
+</div>
+<div class="paragraph">
+<p>Download this <a href="https://github.com/sakai135/wsl-vpnkit/releases/download/v0.2.5/wsl-vpnkit.tar.gz" class="bare">https://github.com/sakai135/wsl-vpnkit/releases/download/v0.2.5/wsl-vpnkit.tar.gz</a>
+Open a Powershell terminal, navigate to the location where you downloaded the file
+And then, execute these commands</p>
+</div>
+<div class="paragraph">
+<p>Go to the folder where you downloaded that file (do not uncompress) and run
+the following commands using a <strong>PowerShell</strong> command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ wsl --import wsl-vpnkit $env:USERPROFILE\wsl-vpnkit wsl-vpnkit.tar.gz --version 2
+$ wsl -d wsl-vpnkit
+$ wsl -d wsl-vpnkit service wsl-vpnkit start</code></pre>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>As of <em>Rancher Desktop</em> V1.4.1, this hack is not required.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="getinstallerviawget"><a class="anchor" href="#getinstallerviawget"></a>Get Installer via WGET</h3>
+<div class="paragraph">
+<p>If you find you have no access in browser to the <strong>github.com</strong> domain due to
+employer policies, then use the following workaround.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong><em>Microsoft Windows</em></strong> Operating System does not come with <strong>wget</strong> utility and
+needs to be downloaded externally. Following are two resources where to install
+this utility.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://builtvisible.com/download-your-website-with-wget/" target="_blank" rel="noopener">How to download, install and use WGET in Windows</a></p>
+</li>
+<li>
+<p><a href="https://eternallybored.org/misc/wget/" target="_blank" rel="noopener">Windows binaries of GNU Wget</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Take into account if your <strong>Windows</strong> machine is 32 or 64 bits.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 85%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">System</th>
+<th class="tableblock halign-left valign-top">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windows</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/rancher-sandbox/rancher-desktop/releases/download/v1.4.1/Rancher.Desktop.Setup.1.4.1.exe" class="bare">https://github.com/rancher-sandbox/rancher-desktop/releases/download/v1.4.1/Rancher.Desktop.Setup.1.4.1.exe</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mac OS Intel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wget <a href="https://github.com/rancher-sandbox/rancher-desktop/releases/download/v1.4.1/Rancher.Desktop-1.4.1.x86_64.dmg" class="bare">https://github.com/rancher-sandbox/rancher-desktop/releases/download/v1.4.1/Rancher.Desktop-1.4.1.x86_64.dmg</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mac OS Silicon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wget <a href="https://github.com/rancher-sandbox/rancher-desktop/releases/download/v1.4.1/Rancher.Desktop-1.4.1.x86_64.dmg" class="bare">https://github.com/rancher-sandbox/rancher-desktop/releases/download/v1.4.1/Rancher.Desktop-1.4.1.x86_64.dmg</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linux</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the following instructions: <a href="https://docs.rancherdesktop.io/getting-started/installation/#linux" target="_blank" rel="noopener">Installation Linux</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="docker-desktop.html">Docker Desktop</a></span>
+  <span class="next"><a href="docker-cmds.html">Commands</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Antora default UI.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

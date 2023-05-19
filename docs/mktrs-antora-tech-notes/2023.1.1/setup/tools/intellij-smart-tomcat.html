@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>IntelliJ Smart Tomcat :: The Muskeeters Tech Notes</title>
+    <link rel="canonical" href="https://theowlo.blogspot.com/mktrs-antora-tech-notes/2023.1.1/setup/tools/intellij-smart-tomcat.html">
+    <link rel="prev" href="intellij.html">
+    <link rel="next" href="jenkins.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://theowlo.blogspot.com">The Muskeeters Tech Notes</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="mktrs-antora-tech-notes" data-version="2023.1.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">The Musketeers Tech Notes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Preface</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../flows.html">Processes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Setup Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="tools.html">Tools</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="git-github.html">Git/Github</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="docker.html">Docker</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="docker-desktop.html">Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="rancher-desktop.html">Rancher Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="docker-cmds.html">Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jdk.html">JDK</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="tomcat.html">Tomcat</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="intellij.html">IntelliJ</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="intellij-smart-tomcat.html">Smart Tomcat</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="jenkins.html">Jenkins</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="sonarqube.html">SonarQube</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="insomnia.html">Insomnia</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cicd-javadev-guide.html">Docker/Jenkins/SonarQube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tipsntricks/index.html">Tips and Tricks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tipsntricks/git-tips.html">Git</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tipsntricks/git-squash.html">Squashing commits</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tipsntricks/git-config-diff-tool.html">Config Diff Tool</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/asciidoctor-tips.html">Asciidoctor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/maven-tips.html">Maven</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/lombok-tips.html">Lombok</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tipsntricks/sonarqube-tips.html">SonarQube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../references.html">References</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">The Musketeers Tech Notes</span>
+    <span class="version">2023.1.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">The Musketeers Tech Notes</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../../index.html">2023.1.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">The Musketeers Tech Notes</a></li>
+    <li><a href="../index.html">Setup Guides</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="intellij.html">IntelliJ</a></li>
+    <li><a href="intellij-smart-tomcat.html">Smart Tomcat</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">IntelliJ Smart Tomcat</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>SmartTomcat</strong> will auto load the Webapp classes and libs from project and
+module, you needn&#8217;t copy the classes and libs to the WEB-INF/classes and
+WEB-INF/lib.</p>
+</div>
+<div class="paragraph">
+<p>The Smart Tomcat plugin will auto config the classpath for tomcat server.
+The Smart Tomcat support <strong>Tomcat 6+</strong>.</p>
+</div>
+<div class="paragraph">
+<p>So here we are going to explain how to install and configure this <strong>IntelliJ</strong>
+plugin.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installation"><a class="anchor" href="#installation"></a>Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first thing you need to do is open the <strong>IntelliJ</strong> IDE, for this guide the
+version used is <em>2021.2.3</em> or later.</p>
+</div>
+<div class="paragraph">
+<p>To open the <strong>IntelliJ</strong> <em>Settings</em> dialog, do the following.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In Windows, navigate to <strong><em>File &#8594; Settings</em></strong> or press <strong><em>CTRL+ALT+S</em></strong>.</p>
+</li>
+<li>
+<p>In MacOSX, navigate to <strong><em>IntelliJ IDEA &#8594; Preferences</strong> or press <strong>_CMD+,</em></strong>.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Most of the screenshot captures are taken using the <strong><em>Windows</em></strong> OS.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/intellij/001-intellij-open-settings.png" alt="IntelliJ Open Settings Dialog" width="500" height="500">
+</div>
+<div class="title">Figure 1. IntelliJ Open Settings Dialog</div>
+</div>
+<div class="paragraph">
+<p>Next locate in the options the <em>Plugins</em> choice. Use the search box to locate
+it quickly as shown next.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/intellij/002-intellij-settings-plugins.png" alt="IntelliJ Settings Plugins" width="700" height="700">
+</div>
+<div class="title">Figure 2. IntelliJ Settings Plugins</div>
+</div>
+<div class="paragraph">
+<p>Play special attention that the dialog presents two choices for checking if the
+desired <strong>Plugin</strong> is installed or not, notice in the screenshot that it has
+two tabs, one named <strong>Marketplace</strong> and the other <strong>Installed</strong>. If the <strong>Plugin</strong>
+is not yet installed it means you need to look for it in the <strong>Marketplace</strong>
+tab, typing in the search box the name of the <strong>Plugin</strong> you need, in this case,
+<strong>Smart Tomcat</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/intellij-smart-tomcat/001-intellij-select-smart-tomcat.png" alt="IntelliJ Settings Plugins" width="700" height="700">
+</div>
+<div class="title">Figure 3. IntelliJ Select Smart Tomcat</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>As indicated in the screenshot, the <strong><em>Smart Tomcat</em></strong> is already installed, but
+if you happen not to have it already installed in your <strong><em>InteliJ</strong>, it would
+say _Install</em>, which is the action you should take now.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After the plugin is correctly installed then it should appear in the other
+tab mentioned before.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that we have the plugin properly configured, let&#8217;s add a new <strong><em>Tomcat</em></strong>
+configuration.</p>
+</div>
+<div class="paragraph">
+<p>In your <strong><em>IntelliJ</em></strong> locate the <strong><em>Add Configuration&#8230;&#8203;</em></strong> option shown next.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/intellij/003-intellij-add-configuration.png" alt="IntelliJ Add Configuration" width="700" height="700">
+</div>
+<div class="title">Figure 4. IntelliJ Add Configuration</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the text is not there it means that you already set a configuration to run,
+so clicking in the same place presents you with other choices.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>And it shows the following dialog.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/intellij/004-Intellij-add-configuration-empty.png" alt="IntelliJ Run/Debug Configurations" width="700" height="700">
+</div>
+<div class="title">Figure 5. IntelliJ Run/Debug Configurations</div>
+</div>
+<div class="paragraph">
+<p>To create a new configuration just click in the plus icon to the left of the dialog.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/intellij/005-intellij-add-configuration-new.png" alt="IntelliJ Run/Debug Configuration Add New" width="700" height="700">
+</div>
+<div class="title">Figure 6. IntelliJ Run/Debug Configuration Add New</div>
+</div>
+<div class="paragraph">
+<p>It will present to you with a selection box.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/intellij-smart-tomcat/002-intellij-add-smart-tomcat.png" alt="IntelliJ Select Smart Tomcat Configuration" width="700" height="700">
+</div>
+<div class="title">Figure 7. IntelliJ Select Smart Tomcat Configuration</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Scroll down to locate the <strong><em>Smart Tomcat</em></strong> configuration to add.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>As you may have guessed, <strong><em>Smart Tomcat</em></strong> requires to know the location of your
+<strong><em>Tomcat Server</em></strong> so he can proceed to put the artifacts therein.</p>
+</div>
+<div class="paragraph">
+<p>Notice that here we don&#8217;t have one defined, so it is now time to declare one as
+shown next, click on the <strong>Configuration</strong> button to define one.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/intellij-smart-tomcat/003-add-tomcat-server.png" alt="Add Tomcat Server" width="700" height="700">
+</div>
+<div class="title">Figure 8. Add Tomcat Server</div>
+</div>
+<div class="paragraph">
+<p>This opens a dialog to define the <strong><em>Tomcat Server</em></strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/intellij-smart-tomcat/004-define-tomcat-server.png" alt="Define Tomcat Server" width="700" height="700">
+</div>
+<div class="title">Figure 9. Define Tomcat Server</div>
+</div>
+<div class="paragraph">
+<p>As shown in the previous imaga, there are no servers defined, so click the
+indicated button, where it will ask you the location in your file system where
+you have installed/configured your <strong><em>Tomcat Server</em></strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/intellij-smart-tomcat/005-define-tomcat-server-location.png" alt="Define Tomcat Server Location" width="700" height="700">
+</div>
+<div class="title">Figure 10. Define Tomcat Server Location</div>
+</div>
+<div class="paragraph">
+<p>Click on the <strong>Apply</strong> and later the <strong>OK</strong> button to accept this setting.</p>
+</div>
+<div class="paragraph">
+<p>It takes you back to previous dialog, expand the drop down box for the
+<strong>Tomcat Server</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/intellij-smart-tomcat/006-choose-tomcat-server.png" alt="Choose Tomcat Server" width="700" height="700">
+</div>
+<div class="title">Figure 11. Choose Tomcat Server</div>
+</div>
+<div class="paragraph">
+<p>What is left is to adjust the settings according to our needs.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/intellij-smart-tomcat/007-configure-settings.png" alt="Configure Smart Tomcat Server" width="700" height="700">
+</div>
+<div class="title">Figure 12. Configure Smart Tomcat Server</div>
+</div>
+<div class="paragraph">
+<p>Where:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Indicates the name of the configuration to run/debug.</p>
+</li>
+<li>
+<p>Choose the appropriate Tomcat server.</p>
+</li>
+<li>
+<p>A working directory for <strong><em>Smart Tomcat</em></strong>, notice that this folder should not
+be included in the <strong>Git</strong> repository, that is, it must be excluded.</p>
+</li>
+<li>
+<p>Sets the context path for the application, normaly it is the <strong>IntelliJ</strong> module.</p>
+</li>
+<li>
+<p>Indicates the memory assigned to the <strong><em>Tomcat</em></strong> process.</p>
+</li>
+<li>
+<p>Click the <strong>Apply</strong> button to accept the changes.</p>
+</li>
+<li>
+<p>Click the <strong>OK</strong> button to accept the changes and close the dialog.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This is a sample configuration, it may change given your requirements.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="intellij.html">IntelliJ</a></span>
+  <span class="next"><a href="jenkins.html">Jenkins</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Antora default UI.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
