@@ -1,8 +1,14 @@
+:toc: macro
+:toclevels: 5
+:toc-placement!:
 = mktrs-antora-tech-notes-site README
 
-V2023.1.0
+V2025.1.0
 
-Publishes the Antora DCL.COM docs over Github Pages.
+toc::[]
+
+= Introduction
+Publishes the Antora `tech-notes` docs over Github Pages.
 This content is found in https://github.com/TheMuskeeters/mktrs-antora-tech-notes[The Musketeers Tech Notes Repository,window=_blank]
 
 AS you can see, there is a folder named *docs* which actually contains the site
@@ -28,7 +34,6 @@ You receive a confirmation of the action as shown next.
 .Github Pages Config Confirmation
 image::resources/0003-githubpages-config-confirmation.png[Github Pages Config Confirmation,scaledwidth=75%,pdfwidth=60%]
 
-
 [NOTE]
 ====
 You can use the following URL to access the site.
@@ -39,5 +44,3 @@ And if you want to learn about *AsciiDoctor* use this link.
 
 * link:https://asciidoctor.org[AsciiDoctor,window=_blank]
 ====
-
- 
